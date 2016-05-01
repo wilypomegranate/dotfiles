@@ -9,8 +9,12 @@ fi
 
 # Customize to your needs...
 
-# Put home bin dir as first in path by default
-PATH=$HOME/bin:$PATH
+# Source env vars in .zvars directory
+
+if [ -d ~/.zvars ]
+then
+  source ~/.zvars/*.zsh
+fi
 
 # Source .zsh files in .zaliases directory
 
