@@ -76,10 +76,57 @@ let mapleader="\<space>"
 " Generic vim settings
 
 set wildmenu            " visual autocomplete for command menu
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc,*.so
+
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+set smartcase 		" smart case searching
+set magic		" regexp maghic
+
+set smarttab 		" smart tabbing
+
+" Simplify window movement
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" Delete trailing white space on save
+func! DeleteTrailingWS()
+  exe "normal mz"
+    %s/\s\+$//ge
+      exe "normal `z"
+endfunc
+autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.cc :call DeleteTrailingWS()
+autocmd BufWrite *.cpp :call DeleteTrailingWS()
+
+" Don't close window, when deleting a buffer
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+   let l:currentBufNum = bufnr("%")
+   let l:alternateBufNum = bufnr("#")
+
+   if buflisted(l:alternateBufNum)
+     buffer #
+   else
+     bnext
+   endif
+
+   if bufnr("%") == l:currentBufNum
+     new
+   endif
+
+   if buflisted(l:currentBufNum)
+     execute("bdelete! ".l:currentBufNum)
+   endif
+endfunction
+
+nnoremap <leader>pp  :set paste<cr>	
+nnoremap <leader>ppn  :set nopaste<cr>	
 
 " turn off search highlight
 nnoremap <leader>h :nohlsearch<cr>
