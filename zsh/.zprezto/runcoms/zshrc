@@ -1,0 +1,28 @@
+#
+# Executes commands at the start of an interactive session.
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+# Put home bin dir as first in path by default
+PATH=$HOME/bin:$PATH
+
+# Source .zsh files in .zaliases directory
+
+if [ -d ~/.zaliases ]
+then
+  source ~/.zaliases/*.zsh
+fi
+
+# Source .zsh files in .zfuncs directory
+
+if [ -d ~/.zfuncs ]
+then
+  source ~/.zfuncs/*.zsh
+fi
+
