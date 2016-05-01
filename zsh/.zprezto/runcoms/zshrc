@@ -9,6 +9,13 @@ fi
 
 # Customize to your needs...
 
+# Get gruvbox colors if they exist
+
+if [ -f ~/.vim/bundle/gruvbox/gruvbox_256palette.sh ]
+then
+  source ~/.vim/bundle/gruvbox/gruvbox_256palette.sh
+fi
+
 # Source env vars in .zvars directory
 
 if [ -d ~/.zvars ]
