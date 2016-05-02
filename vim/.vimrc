@@ -41,6 +41,8 @@ Plugin 'Quramy/tsuquyomi'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-obsession'
+Plugin 'dhruvasagar/vim-prosession'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
