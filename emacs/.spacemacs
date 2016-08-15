@@ -28,6 +28,12 @@ values."
      emacs-lisp
      python
      javascript
+     html
+     markdown
+     c-c++
+     rust
+     shell-scripts
+     yaml
      git
      ;; markdown
      ;; org
@@ -263,10 +269,11 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (gruvbox-dark-theme grubox-dark-theme helm-company helm-c-yasnippet company-tern dash-functional company-statistics company-quickhelp company-anaconda company auto-yasnippet ac-ispell auto-complete web-beautify tern json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter diff-hl smeargle pyvenv pytest pyenv-mode py-yapf pip-requirements orgit magit-gitflow hy-mode helm-pydoc helm-gitignore request gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor cython-mode anaconda-mode pythonic f ws-butler window-numbering volatile-highlights vi-tilde-fringe spaceline s powerline smooth-scrolling restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox hydra spinner page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme))))
+    (yaml-mode web-mode toml-mode tagedit slim-mode scss-mode sass-mode racer rust-mode mmm-mode markdown-toc markdown-mode less-css-mode jade-mode helm-css-scss haml-mode gh-md flycheck-rust fish-mode emmet-mode disaster company-web web-completion-data company-racer deferred company-c-headers cmake-mode clang-format gruvbox-dark-theme grubox-dark-theme helm-company helm-c-yasnippet company-tern dash-functional company-statistics company-quickhelp company-anaconda company auto-yasnippet ac-ispell auto-complete web-beautify tern json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter diff-hl smeargle pyvenv pytest pyenv-mode py-yapf pip-requirements orgit magit-gitflow hy-mode helm-pydoc helm-gitignore request gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor cython-mode anaconda-mode pythonic f ws-butler window-numbering volatile-highlights vi-tilde-fringe spaceline s powerline smooth-scrolling restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox hydra spinner page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
