@@ -33,10 +33,13 @@ values."
      markdown
      yaml
      ansible
-     c-c++
+     (c-c++ :variables c-c++-enable-clang-support t)
      rust
      shell-scripts
      org
+     jabber
+     ranger
+     themes-megapack
      (shell :variables
             shell-default-shell 'eshell
             shell-default-height 30
@@ -155,7 +158,7 @@ values."
    dotspacemacs-display-default-layout nil
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-resume-layouts t
    ;; Location where to auto-save files. Possible values are `original' to
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
@@ -267,6 +270,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  ;; Change _ to be part of a workd in python
+  (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w"))
+   )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -278,14 +285,12 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["color-235" "color-167" "color-142" "color-214" "color-109" "color-175" "color-108" "color-223"])
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(fci-rule-color "color-74")
+ '(fci-rule-color "color-74" t)
  '(frame-background-mode (quote dark))
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-symbol-colors
@@ -317,7 +322,9 @@ you should place your code here."
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (zenburn-theme monokai-theme solarized-theme ansible-doc ansible toc-org org-repo-todo org-present org-pomodoro alert log4e gntp org-plus-contrib org-bullets htmlize gnuplot xterm-color shell-pop multi-term eshell-prompt-extras esh-help stickyfunc-enhance srefactor yaml-mode web-mode web-beautify toml-mode tagedit smeargle slim-mode scss-mode sass-mode racer rust-mode pyvenv pytest pyenv-mode py-yapf pip-requirements orgit mmm-mode markdown-toc markdown-mode magit-gitflow less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc jade-mode hy-mode helm-pydoc helm-gitignore request helm-css-scss helm-company helm-c-yasnippet haml-mode gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flycheck-rust flycheck-pos-tip flycheck fish-mode evil-magit magit magit-popup git-commit with-editor emmet-mode disaster diff-hl cython-mode company-web web-completion-data company-tern dash-functional tern company-statistics company-racer deferred company-quickhelp pos-tip company-c-headers company-anaconda company coffee-mode cmake-mode clang-format auto-yasnippet yasnippet anaconda-mode pythonic f ac-ispell auto-complete gruvbox-dark-theme ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package spacemacs-theme spaceline smooth-scrolling restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+    (zonokai-theme zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme stekene-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pastels-on-dark-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme naquadah-theme mustang-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme firebelly-theme farmhouse-theme espresso-theme dracula-theme django-theme darktooth-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme colorsarenice-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme anzu helm helm-core package-build evil ranger jabber fsm zenburn-theme monokai-theme solarized-theme ansible-doc ansible toc-org org-repo-todo org-present org-pomodoro alert log4e gntp org-plus-contrib org-bullets htmlize gnuplot xterm-color shell-pop multi-term eshell-prompt-extras esh-help stickyfunc-enhance srefactor yaml-mode web-mode web-beautify toml-mode tagedit smeargle slim-mode scss-mode sass-mode racer rust-mode pyvenv pytest pyenv-mode py-yapf pip-requirements orgit mmm-mode markdown-toc markdown-mode magit-gitflow less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc jade-mode hy-mode helm-pydoc helm-gitignore request helm-css-scss helm-company helm-c-yasnippet haml-mode gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flycheck-rust flycheck-pos-tip flycheck fish-mode evil-magit magit magit-popup git-commit with-editor emmet-mode disaster diff-hl cython-mode company-web web-completion-data company-tern dash-functional tern company-statistics company-racer deferred company-quickhelp pos-tip company-c-headers company-anaconda company coffee-mode cmake-mode clang-format auto-yasnippet yasnippet anaconda-mode pythonic f ac-ispell auto-complete gruvbox-dark-theme ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package spacemacs-theme spaceline smooth-scrolling restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+ '(paradox-github-token t)
+ '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
@@ -356,5 +363,4 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ )
