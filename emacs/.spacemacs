@@ -321,6 +321,7 @@ you should place your code here."
           (lambda () (setq flycheck-clang-include-path
                            (list (expand-file-name "/usr/include/ffmpeg")
                                  (expand-file-name "/opt/opencv-3.2.0/include")
+                                 (flycheck-gcc-language-standard "c++11")
                                  (projectile-expand-root "src")
                                  (projectile-expand-root "include")
                                  (projectile-expand-root "test/src")

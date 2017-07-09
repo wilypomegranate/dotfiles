@@ -52,6 +52,7 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'tmux' \
   'utility' \
+  'node' \
   'prompt'
 
 #
