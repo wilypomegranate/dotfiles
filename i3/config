@@ -223,6 +223,10 @@ bar {
 }
 
 exec --no-startup-id nm-applet
+# volumeicon doesn't work until we actually play something
+# See - https://www.reddit.com/r/i3wm/comments/42cp4a/running_volumeicon_at_i3_startup/
+# This takes 3 seconds or so
+exec --no-startup-id "aplay /usr/share/sounds/alsa/Front_Center.wav && volumeicon"
 
 # Background setup
 exec_always --no-startup-id feh --bg-fill /home/jon/Pictures/backgrounds/jupiter.jpg
