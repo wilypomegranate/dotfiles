@@ -124,6 +124,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -147,7 +149,57 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+# Mode for power control
+set $mode_power Power (l) lock, (e) logout, (p) poweroff, (h) hibernate, (r) reboot, (s) suspend
+# Initialize power mode with mode p
+bindsym $mod+p mode "$mode_power"
+mode "$mode_power" {
+    bindsym l exec --no-startup-id i3lock, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id "i3lock && systemctl suspend", mode "default"
+    bindsym h exec --no-startup-id "i3lock && systemctl hibernate", mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+
+################################################
+# Sets of application environments
+################################################
+
+# Mode for application environments
+set $mode_env Env (d) dev, (b) browsing, (v) virt
+# Initialize power mode with mode p
+bindsym $mod+q mode "$mode_env"
+mode "$mode_env" {
+    bindsym d exec --no-startup-id roxterm -e "tmux", exec --no-startup-id "google-chrome gmail.com", exec --no-startup-id "emacs", mode "default"
+    bindsym b exec --no-startup-id "google-chrome gmail.com", mode "default"
+    bindsym v exec --no-startup-id "virt-manager", mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+################################################
+# Default workspace assignments for applications
+################################################
+
+# roxterm is on workspace 1
+assign [instance="roxterm"] 1
+
+# google-chrome is on workspace 2
+assign [instance="google-chrome"] 2
+
+# emacs is on workspace 3
+assign [instance="emacs"] 3
+
+################################################
+
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -164,7 +216,6 @@ bar {
         # Put the bar at the top
         position top
         status_command i3status
-        tray_output LVDS
         colors{
           background #232323
           statusline #DCDCDC
@@ -172,3 +223,6 @@ bar {
 }
 
 exec --no-startup-id nm-applet
+
+# Background setup
+exec_always --no-startup-id feh --bg-fill /home/jon/Pictures/backgrounds/jupiter.jpg
