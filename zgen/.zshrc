@@ -163,3 +163,15 @@ source_dir "${ZENV_DIR}/work/zaliases"
 # Source themes
 source_dir "${ZENV_DIR}/home/zthemes"
 source_dir "${ZENV_DIR}/work/zthemes"
+
+# Completions
+# COMPLETION SETTINGS
+# add custom completion scripts
+fpath=("${ZENV_DIR}/home/zcompletions" "${ZENV_DIR}/work/zcompletions" $fpath) 
+
+# compsys initialization
+autoload -U compinit
+compinit
+
+# show completion menu when number of options is at least 2
+zstyle ':completion:*' menu select=2
