@@ -82,7 +82,8 @@ if ! zgen saved; then
     zgen load horosgrisa/mysql-colorize
 
     # Make sure nvm is installed and loaded
-    zgen load lukechilds/zsh-nvm
+    # This is hilariously slow
+    # zgen load lukechilds/zsh-nvm
 
     # Auto source .nvmrc file in directory
     zgen load dijitalmunky/nvm-auto
@@ -151,13 +152,13 @@ ZENV_DIR="${HOME}/.zenv"
 source_dir "${ZENV_DIR}/home/zvars"
 source_dir "${ZENV_DIR}/work/zvars"
 
-# Source zaliases
-source_dir "${ZENV_DIR}/home/zaliases"
-source_dir "${ZENV_DIR}/work/zaliases"
-
 # Source zfuncs
 source_dir "${ZENV_DIR}/home/zfuncs"
 source_dir "${ZENV_DIR}/work/zfuncs"
+
+# Source zaliases
+source_dir "${ZENV_DIR}/home/zaliases"
+source_dir "${ZENV_DIR}/work/zaliases"
 
 # Source themes
 source_dir "${ZENV_DIR}/home/zthemes"
