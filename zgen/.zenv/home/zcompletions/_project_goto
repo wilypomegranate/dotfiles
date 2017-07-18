@@ -1,0 +1,7 @@
+#compdef project_goto
+
+# I really don't like the trailing slash with this completion
+#_path_files -/ -W "${PROJECT_ROOT_DIR}"
+local projects=("${(@f)$(ls ${PROJECT_ROOT_DIR})}")
+
+ _values ${projects}
