@@ -94,6 +94,9 @@ if ! zgen saved; then
     # Syntax highlighting
     zgen load zsh-users/zsh-syntax-highlighting
 
+    # Project directory management
+    zgen load wilypomegranate/zproj
+
 
     # Theme
     # zgen oh-my-zsh themes/awesomepanda
