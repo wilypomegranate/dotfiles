@@ -6,3 +6,11 @@ function pyclean {
     rm -rf dist
     rm -rf *egg-info*
 }
+
+function pa {
+    SEARCH=${1}
+    if [ -z ${SEARCH} ]
+    then
+        ps auwwxxx | grep -i ${SEARCH} | grep -v grep
+    fi
+}
