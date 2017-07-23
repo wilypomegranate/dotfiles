@@ -1,8 +1,36 @@
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
-# if the init scipt doesn't exist
-if ! zgen saved; then
+# This directory is where I put all my vars, functions, and aliases
+ZENV_DIR="${HOME}/.zenv"
+
+# Put vars, functions, and aliases under .zenv
+# Separate work and home so that work can be untracked
+# but home is prefered
+
+function source_dir() {
+    if [ -d "${1}" ]
+    then
+        files=(${1}/*.zsh(N))
+        if [[ ${#files} > 0 ]]
+        then
+            for file in  ${1}/*.zsh
+            do
+                source ${file}
+            done
+        fi
+    fi
+}
+
+# Source pre plugin zvars
+# This sets up zproj and zsh-nvm
+source_dir "${ZENV_DIR}/home/zvars_pre"
+source_dir "${ZENV_DIR}/work/zvars_pre"
+
+
+# If the init script doesn't exist
+if ! zgen saved
+then
 
     # specify plugins here
     zgen oh-my-zsh
@@ -71,22 +99,27 @@ if ! zgen saved; then
     # Reminders to learn aliases
     zgen load djui/alias-tips
 
+    # This isn't working correctly - Disabling for now
     # Easy rebasing via 'rebase'
-    zgen load antigen bundle smallhadroncollider/antigen-git-rebase
+    # zgen load antigen bundle smallhadroncollider/antigen-git-rebase
 
     # save/restore git without commiting
     # This is to avoid arbitrary commits
     zgen load smallhadroncollider/antigen-git-store
 
-    # MySQl colors
+    # MySQL colors
     zgen load horosgrisa/mysql-colorize
 
     # Make sure nvm is installed and loaded
-    # This is hilariously slow
+    # This is hilariously slow if NVM_LAZY_LOAD isn't set to true
+    # I do this in zvars_pre
+    # This doesn't seem to work correctly with zgen.
+    # I'm using my own implementation for now.
+    # See zfuncs/home/nvm.zsh
     # zgen load lukechilds/zsh-nvm
 
     # Auto source .nvmrc file in directory
-    zgen load dijitalmunky/nvm-auto
+    # zgen load dijitalmunky/nvm-auto
 
     # Auto nohup vs C-h
     zgen load micrenda/zsh-nohup
@@ -96,6 +129,9 @@ if ! zgen saved; then
 
     # Project directory management
     zgen load wilypomegranate/zproj
+
+    # Keep around for testing of zproj
+    # zgen load ${HOME}/projects/zproj
 
 
     # Theme
@@ -131,26 +167,6 @@ then
     source ~/.vim/bundle/gruvbox/gruvbox_256palette.sh
 fi
 
-# Put vars, functions, and aliases under .zenv
-# Separate work and home so that work can be untracked
-# but home is prefered
-
-function source_dir() {
-    if [ -d "${1}" ]
-    then
-        files=(${1}/*.zsh(N))
-        if [[ ${#files} > 0 ]]
-        then
-            for file in  ${1}/*.zsh
-            do
-                source ${file}
-            done
-        fi
-    fi
-}
-
-ZENV_DIR="${HOME}/.zenv"
-
 # Source zvars
 source_dir "${ZENV_DIR}/home/zvars"
 source_dir "${ZENV_DIR}/work/zvars"
@@ -170,11 +186,11 @@ source_dir "${ZENV_DIR}/work/zthemes"
 # Completions
 # COMPLETION SETTINGS
 # add custom completion scripts
-fpath=("${ZENV_DIR}/home/zcompletions" "${ZENV_DIR}/work/zcompletions" $fpath) 
+# fpath=("${ZENV_DIR}/home/zcompletions" "${ZENV_DIR}/work/zcompletions" $fpath)
 
 # compsys initialization
-autoload -U compinit
-compinit
+# autoload -U compinit
+# compinit
 
 # show completion menu when number of options is at least 2
-zstyle ':completion:*' menu select=2
+# zstyle ':completion:*' menu select=2
