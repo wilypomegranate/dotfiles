@@ -228,5 +228,8 @@ exec --no-startup-id nm-applet
 # This takes 3 seconds or so
 exec --no-startup-id "aplay /usr/share/sounds/alsa/Front_Center.wav && volumeicon"
 
+# Use redshift to setup day/night color scheme
+exec --no-startup-id "redshift -l 32.2:-76.8"
+
 # Background setup
 exec_always --no-startup-id feh --bg-fill /home/jon/Pictures/backgrounds/jupiter.jpg
