@@ -81,7 +81,7 @@ values."
      ;; eshell doesn't really support going back through history
      ;; with simple shortcuts
      (shell :variables
-            shell-default-shell 'ansi-term
+            shell-default-shell 'eshell
             shell-default-height 30
             shell-default-position 'bottom)
      semantic
@@ -197,7 +197,7 @@ values."
    dotspacemacs-display-default-layout nil
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
    ;; Location where to auto-save files. Possible values are `original' to
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
