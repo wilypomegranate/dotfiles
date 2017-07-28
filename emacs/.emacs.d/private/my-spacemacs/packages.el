@@ -9,6 +9,9 @@
   (venv-initialize-interactive-shells)
   (venv-initialize-eshell)
   (setq venv-location "~/venvs")
+  ;; This is to disable projectile for TRAMP
+  ;; TODO - Should be moved to init for projectile elsewhere
+  (setq projectile-mode-line "Projectile")
   )
 
 (defun my-spacemacs/init-nvm()
