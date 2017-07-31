@@ -18,33 +18,39 @@
   (use-package nvm)
   )
 
-;; Create function for activating nvm
+;; TODO - Move nvm to a layer
+
+;; (defun nvm-extract-version (nvm_info)
+;;   (nvm-extract-version (cdr nvm_info))
+;;   (car nvm_info)
+;;   )
+
+(defun nvm-list-version ()
+  (let (value)
+    (dolist (element (nvm--installed-versions) value)
+      (setq value (cons (car element) value))
+      )
+    )
+  )
+  ;; (when versions
+  ;;   (nvm-extract-version versions)
+  ;;   )
+ ;; (cons (nvm--installed-versions) (nvm-extract-version(nvm--installed-versions)))
 
 (defun my-nvm-use (&optional version)
+  "Activate a nvm version. Prompts if version not passed in."
   (interactive)
-  ;; (nvm-use version)
+  ;; (message "nvm version %s" (read-string "Enter your name:"))
+  ;; (let (candidates (nvm-list-version))
+  ;;   (completing-read prompt
+  ;;                    candidates nil t nil
+  ;;                    )
+  ;;   )
+  ;; (let (candidates (nvm-list-version))
+  ;;   (print candidates)
+  ;;   )
+  (unless version
+    (setq version (completing-read "Choose nvm version: " (nvm-list-version)))
+    )
+  (nvm-use version)
   )
-
-(defun do-venv-workon (&optional name)
-  "Interactively switch to virtualenv NAME. Prompts for name if called
-interactively."
-  (interactive)
-  ;; if without argument, read from user
-  (unless name
-    (setq name (venv-read-name
-                (if venv-current-name
-                    (format "Choose a virtualenv (currently %s): " venv-current-name)
-                  "Choose a virtualenv: "))))
-  ;; validate name
-  (when (not (venv-is-valid name))
-    (error (format "Invalid virtualenv %s specified!" name)))
-  ;; then deactivate
-  (venv-deactivate)
-  ;; then switch
-  (setq venv-current-name name)
-  ;; push it onto the history
-  (add-to-list 'venv-history venv-current-name)
-  ;; actually activate it
-  (venv--activate-dir (venv-name-to-dir venv-current-name))
-  (when (called-interactively-p 'interactive)
-    (message (concat "Switched to virtualenv: " venv-current-name))))
