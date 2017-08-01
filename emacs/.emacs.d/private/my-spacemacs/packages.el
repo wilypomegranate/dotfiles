@@ -4,6 +4,9 @@
     nvm)
   )
 
+;; TRAMP mode remote shell config
+(setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
+
 (defun my-spacemacs/init-virtualenvwrapper()
   (use-package virtualenvwrapper)
   (venv-initialize-interactive-shells)
