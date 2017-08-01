@@ -66,6 +66,7 @@ values."
      ipython-notebook
      mineo-irony
      my-spacemacs
+     work-spacemacs
      ob-ipython
      nginx
      rust
