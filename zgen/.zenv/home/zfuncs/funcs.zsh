@@ -9,7 +9,7 @@ function pyclean {
 
 function pa {
     SEARCH=${1}
-    if [ -z ${SEARCH} ]
+    if [ -n ${SEARCH} ]
     then
         ps auwwxxx | grep -i ${SEARCH} | grep -v grep
     fi
