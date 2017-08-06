@@ -198,6 +198,9 @@ assign [instance="google-chrome"] 2
 # emacs is on workspace 3
 assign [instance="emacs"] 3
 
+# pidgin is on workspace 4
+assign [instance="pidgin"] 4
+
 ################################################
 
 
