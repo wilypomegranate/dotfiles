@@ -7,6 +7,9 @@
 ;; TRAMP mode remote shell config
 (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
 
+;; Use eww by default
+(setq browse-url-browser-function 'eww-browse-url)
+
 (defun my-spacemacs/init-virtualenvwrapper()
   (use-package virtualenvwrapper)
   (venv-initialize-interactive-shells)
