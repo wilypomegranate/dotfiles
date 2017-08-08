@@ -77,7 +77,8 @@ values."
      (org :variables
           org-enable-github-support t
           org-enable-bootstrap-support t
-          org-enable-reveal-js-support t)
+          org-enable-reveal-js-support t
+          org-projectile-file "TODOs.org")
      jabber
      (elfeed :variables
              rmh-elfeed-org-files
@@ -360,6 +361,11 @@ you should place your code here."
 
   ;; git configuration
   (setq magit-repository-directories '("~/projects/"))
+
+  ;; org configuration
+  (with-eval-after-load 'org-agenda
+    (require 'org-projectile)
+    (push (org-projectile:todo-files) org-agenda-files))
 
   ;;flycheck
   (add-hook 'c++-mode-hook
