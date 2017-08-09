@@ -10,6 +10,10 @@
 ;; Use eww by default
 (setq browse-url-browser-function 'eww-browse-url)
 
+;; org agenda settings
+(setq org-agenda-files (list "~/org/schedule.org"
+                             "~/org/notes.org"))
+
 (defun my-spacemacs/init-virtualenvwrapper()
   (use-package virtualenvwrapper)
   (venv-initialize-interactive-shells)
