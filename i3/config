@@ -26,6 +26,9 @@ font pango: Ubuntu Mono 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+# Set the default layout to stacked. Use $mod+e to set split
+workspace_layout stacked
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -236,3 +239,5 @@ exec --no-startup-id "redshift -l 32.2:-76.8"
 
 # Background setup
 exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/f26/default/wide/f26.png
+
+exec  xrandr --dpi 220
