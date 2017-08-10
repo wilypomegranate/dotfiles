@@ -68,6 +68,7 @@ values."
      my-spacemacs
      home-spacemacs
      work-spacemacs
+     my-nvm
      ob-ipython
      nginx
      rust
