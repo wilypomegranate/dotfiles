@@ -95,6 +95,7 @@ values."
             shell-default-shell 'eshell
             shell-default-height 30
             shell-default-position 'bottom)
+     my-eshell
      semantic
      syntax-checking
      version-control
