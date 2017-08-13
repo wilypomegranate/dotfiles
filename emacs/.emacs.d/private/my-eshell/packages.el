@@ -76,9 +76,9 @@
   ;;   )
 
   (when ( >=
-          (list-length (split-string (eshell-previous-input-string 1)))
+          (list-length (split-string (eshell-previous-input-string (- arg 1))))
              2)
-    (insert-and-inherit (car (last (split-string (eshell-previous-input-string 1)))))
+    (insert-and-inherit (car (last (split-string (eshell-previous-input-string (- arg 1))))))
     )
   )
 
@@ -88,3 +88,9 @@
 ;; (let ((map (make-sparse-keymap)))
   ;; (define-key eshell-mode-map "\C-c." 'eshell/last-command-arg)
   ;; )
+
+(with-eval-after-load 'esh-opt
+  (evil-define-key 'insert eshell-mode-map
+    (kbd "C-c .") 'eshell-last-command-arg
+    )
+  )
