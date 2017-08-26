@@ -33,7 +33,7 @@ workspace_layout stacked
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec roxterm
+bindsym $mod+Return exec tilix
 
 # kill focused window
 bindsym $mod+d kill
@@ -179,7 +179,7 @@ set $mode_env Env (d) dev, (b) browsing, (v) virt
 # Initialize power mode with mode p
 bindsym $mod+q mode "$mode_env"
 mode "$mode_env" {
-    bindsym d exec --no-startup-id roxterm -e "tmux", exec --no-startup-id "google-chrome gmail.com", exec --no-startup-id "emacs", mode "default"
+    bindsym d exec --no-startup-id tilix -e "tmux", exec --no-startup-id "google-chrome gmail.com", exec --no-startup-id "emacs", mode "default"
     bindsym b exec --no-startup-id "google-chrome gmail.com", mode "default"
     bindsym v exec --no-startup-id "virt-manager", mode "default"
 
@@ -193,6 +193,9 @@ mode "$mode_env" {
 ################################################
 
 # roxterm is on workspace 1
+assign [instance="roxterm"] 1
+
+# tilix is on workspace 1
 assign [instance="roxterm"] 1
 
 # google-chrome is on workspace 2
