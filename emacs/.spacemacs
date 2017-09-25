@@ -24,7 +24,12 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+     ;; helm is required as a layer now
+     helm
+     (auto-completion
+      :variables
+      auto-completion-enable-snippets-in-popup t
+      )
      ;; better-defaults
      emacs-lisp
      ;; This add s/S to search by two chars intead of 1 like f/F
@@ -71,6 +76,7 @@ values."
      my-nvm
      ob-ipython
      nginx
+     docker
      rust
      shell-scripts
      ;; Read layer documentation for npm packages to add
