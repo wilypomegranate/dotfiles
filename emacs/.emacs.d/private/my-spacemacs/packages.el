@@ -1,6 +1,7 @@
 (defconst my-spacemacs-packages
   '(
     virtualenvwrapper
+    nord-theme
     )
   )
 
@@ -22,6 +23,10 @@
   ;; This is to disable projectile for TRAMP
   ;; TODO - Should be moved to init for projectile elsewhere
   (setq projectile-mode-line "Projectile")
+  )
+
+(defun my-spacemacs/init-nord-theme()
+  (use-package nord-theme)
   )
 
 ;; (defun nvm-extract-version (nvm_info)
