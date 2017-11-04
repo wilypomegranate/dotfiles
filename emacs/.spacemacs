@@ -63,6 +63,8 @@ values."
      salt
      systemd
      (c-c++ :variables
+      c-c++-enable-clang-support t
+      c-c++-enable-clang-format-on-save t
       c-c++-default-mode-for-headers 'c++-mode)
      ;; c-c++-enable-clang-support nil
      ;; rtags
@@ -385,6 +387,11 @@ you should place your code here."
                                  (projectile-expand-root "include")
                                  (projectile-expand-root "test/src")
                                  (projectile-project-root)))))
+
+  ;; Bind clang-format-buffer to tab on the c++-mode only:
+  (add-hook 'c++-mode-hook 'clang-format-bindings)
+    (defun clang-format-bindings ()
+      (define-key c++-mode-map [tab] 'clang-format-buffer))
 
 
 ;; Do not write anything past this comment. This is where Emacs will
