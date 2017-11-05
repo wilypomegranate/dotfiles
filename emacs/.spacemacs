@@ -72,6 +72,7 @@ values."
      gtags
      ipython-notebook
      mineo-irony
+     rtags
      my-spacemacs
      home-spacemacs
      work-spacemacs
