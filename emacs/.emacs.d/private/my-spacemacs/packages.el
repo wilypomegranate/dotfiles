@@ -1,7 +1,7 @@
 (defconst my-spacemacs-packages
   '(
     virtualenvwrapper
-    nord-theme
+    ;; nord-theme
     )
   )
 
