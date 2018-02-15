@@ -12,6 +12,9 @@
   (eshell/alias "la" "ls -lAh $*")
   (eshell/alias "lart" "ls -lart $*")
 
+  ;; Other common aliases
+  (eshell/alias "md" "mkdir -p $*")
+
   ;; dnf aliases - based on oh-my-zsh dnf plugin
   (eshell/alias "dnfc" "sudo dnf clean all $*")
   (eshell/alias "dnfgi" "sudo dnf groupinstall -y $*")
