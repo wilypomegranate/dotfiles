@@ -35,9 +35,9 @@
   (eshell/alias "npmt" "npm test")
 
   ;; find-file aliases
-  (eshell/alias "ff" "find-file-other-window")
-  (eshell/alias "vim" "find-file-other-window")
-  (eshell/alias "vi" "find-file-other-window")
+  (eshell/alias "ff" "find-file-other-window $1")
+  (eshell/alias "vim" "find-file-other-window $1")
+  (eshell/alias "vi" "find-file-other-window $1")
 
   ;; cd aliases
   (eshell/alias "1" "cd -")
