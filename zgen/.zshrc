@@ -136,6 +136,21 @@ then
     # Completion generation plugin
     zgen load RobSis/zsh-completion-generator
 
+    # Go back dirs
+    zgen load Tarrasch/zsh-bd
+
+    # Directory lister
+    zgen load supercrabtree/k
+
+    # Multi-word searching for easier ^r history search.
+    zgen load psprint/history-search-multi-word
+
+    # Simple calculation functions via bc
+    zgen load vladmrnv/statify
+
+    # Record output of traced commands
+    zgen load psprint/ztrace
+
     # Keep around for testing of zproj
     # zgen load ${HOME}/projects/zproj
 
