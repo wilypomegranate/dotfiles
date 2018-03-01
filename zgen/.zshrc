@@ -130,8 +130,21 @@ then
     # Project directory management
     zgen load wilypomegranate/zproj
 
+    # Ninja completion plugin
+    zgen load wilypomegranate/zsh-ninja
+
+    # Completion generation plugin
+    zgen load RobSis/zsh-completion-generator
+
     # Keep around for testing of zproj
     # zgen load ${HOME}/projects/zproj
+
+
+    # Loading work plugins
+    for plugin in $(find ${HOME}/.zenv/work/plugins -maxdepth 1 -mindepth 1 -type d)
+    do
+        zgen load ${plugin}
+    done
 
 
     # Theme
