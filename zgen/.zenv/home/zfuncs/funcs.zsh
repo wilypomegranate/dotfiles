@@ -14,3 +14,11 @@ function pa {
         ps auwwxxx | grep -i ${SEARCH} | grep -v grep
     fi
 }
+
+function pe {
+    SEARCH=${1}
+    if [ -n ${SEARCH} ]
+    then
+        ps -eF | grep -i ${SEARCH} | grep -v grep
+    fi
+}
