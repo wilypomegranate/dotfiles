@@ -1,7 +1,9 @@
 (defconst my-spacemacs-packages
   '(
     virtualenvwrapper
-    ;; nord-theme
+    nord-theme
+    doom-themes
+    sphinx-doc
     )
   )
 
@@ -28,6 +30,47 @@
 (defun my-spacemacs/init-nord-theme()
   (use-package nord-theme)
   )
+
+
+(defun my-spacemacs/init-doom-theme()
+  (use-package nord-theme)
+  )
+
+(defun my-spacemacs/init-sphinx-doc()
+  (use-package sphinx-doc
+    :defer t
+    :init
+    (progn
+      ;; Enable sphinx when python loads
+      (add-hook 'python-mode-hook (lambda ()
+                                    (require 'sphinx-doc)
+                                    (sphinx-doc-mode t)))
+      ;; Keybindings for enabling sphinx-doc-mode
+      (spacemacs/set-leader-keys-for-minor-mode 'sphinx-doc-mode
+        "z" 'sphinx-doc
+        )
+      )
+    )
+  )
+
+;; This is a patch for projectile that for some reason isn't fixed.
+;; See https://github.com/bbatsov/projectile/pull/1234.
+(defun projectile-discover-projects-in-directory (directory)
+  "Discover any projects in DIRECTORY and add them to the projectile cache.
+This function is not recursive and only adds projects with roots
+at the top level of DIRECTORY."
+  (interactive
+   (list (read-directory-name "Starting directory: ")))
+  (let ((subdirs (directory-files directory t)))
+    (mapcar
+     (lambda (dir)
+       (when (and (file-directory-p dir)
+                  (not (member (file-name-nondirectory dir) '(".." "."))))
+         (let ((default-directory dir)
+               (projectile-cached-project-root dir))
+           (when (projectile-project-p)
+             (projectile-add-known-project (projectile-project-root))))))
+     subdirs)))
 
 ;; (defun nvm-extract-version (nvm_info)
 ;;   (nvm-extract-version (cdr nvm_info))
