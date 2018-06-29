@@ -6,6 +6,8 @@
     "telemetry.enableTelemetry": false,
     "editor.minimap.enabled": false,
     "python.venvPath": "~/venvs",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     // VSpaceCode settings
     "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -1944,4 +1946,9 @@
     "window.menuBarVisibility": "toggle",
     "workbench.activityBar.visible": true,
     "git.confirmSync": false,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "materialTheme.fixIconsRunning": false,
+    "workbench.iconTheme": "eq-material-theme-icons",
 }
