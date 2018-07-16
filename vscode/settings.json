@@ -6,8 +6,15 @@
     "telemetry.enableTelemetry": false,
     "editor.minimap.enabled": false,
     "python.venvPath": "~/venvs",
+    "editor.fontFamily": "'Fira Code Retina'",
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "clang-format.executable": "${workspaceRoot}/.clang_format",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
     // VSpaceCode settings
     "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -1942,7 +1949,7 @@
         }
     ],
     "vim.easymotion": true,
-    "workbench.colorTheme": "Mariana Nord",
+    "workbench.colorTheme": "soft era",
     "window.menuBarVisibility": "toggle",
     "workbench.activityBar.visible": true,
     "git.confirmSync": false,
