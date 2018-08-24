@@ -27,10 +27,24 @@
   (setq projectile-mode-line "Projectile")
   )
 
+;; Define the function for auto sourcing virtualenvs.
+(with-eval-after-load 'projectile
+  (setq projectile-switch-project-action
+        '(lambda ()
+           (pyvenv-projectile-auto-workon)
+           (projectile-find-file)))
+  )
+
+(defun pyvenv-projectile-auto-workon ()
+  "If a venv with the projectile name exists, activate it."
+  ;; NOTE The python layer is required for this to work.
+  (require 'pyvenv)
+  (pyvenv-workon projectile-project-name)
+  )
+
 (defun my-spacemacs/init-nord-theme()
   (use-package nord-theme)
   )
-
 
 (defun my-spacemacs/init-doom-theme()
   (use-package nord-theme)
