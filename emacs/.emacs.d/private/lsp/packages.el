@@ -55,6 +55,10 @@
       ;; Disable lsp-flycheck.el in favor of lsp-ui-flycheck.el
       (setq lsp-enable-flycheck nil)
 
+      ;; Disable lsp-root warning for python projects where the root isn't
+      ;; in the project.
+      (setq lsp-message-project-root-warning t)
+
       (spacemacs|diminish lsp-mode " Ⓛ" " L")
       )))
 
