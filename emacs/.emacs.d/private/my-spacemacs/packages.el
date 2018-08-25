@@ -3,6 +3,7 @@
     virtualenvwrapper
     nord-theme
     doom-themes
+    blacken
     sphinx-doc
     )
   )
@@ -47,7 +48,11 @@
   )
 
 (defun my-spacemacs/init-doom-theme()
-  (use-package nord-theme)
+  (use-package doom-theme)
+  )
+
+(defun my-spacemacs/init-blacken()
+  (use-package blacken)
   )
 
 (defun my-spacemacs/init-sphinx-doc()
