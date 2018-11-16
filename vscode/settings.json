@@ -505,6 +505,21 @@
             "before": [
                 "<leader>",
                 "m",
+                "g",
+                "a"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "C_Cpp.SwitchHeaderSource",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "m",
                 "="
             ],
             "after": [],
@@ -1957,5 +1972,9 @@
         "suppressShowKeyBindingsNotice": true
     },
     "materialTheme.fixIconsRunning": false,
-    "workbench.iconTheme": "eq-material-theme-icons",
+    "workbench.iconTheme": "vscode-icons",
+    "window.zoomLevel": 0,
+    "editor.multiCursorModifier": "alt",
+    "cSpell.enabled": false,
+    "python.linting.pylintUseMinimalCheckers": true,
 }
