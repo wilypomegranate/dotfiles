@@ -5,6 +5,13 @@
     doom-themes
     blacken
     sphinx-doc
+    flycheck-pycheckers
+    ;; Pick up a forked version of lsp-python with support for
+    ;; automatically sourcing virutalenv and installing
+    ;; python-language-server.
+    (lsp-python :location (recipe
+                           :fetcher github
+                           :repo "wilypomegranate/lsp-python"))
     )
   )
 
@@ -29,12 +36,12 @@
   )
 
 ;; Define the function for auto sourcing virtualenvs.
-(with-eval-after-load 'projectile
-  (setq projectile-switch-project-action
-        '(lambda ()
-           (pyvenv-projectile-auto-workon)
-           (projectile-find-file)))
-  )
+;; (with-eval-after-load 'projectile
+;;   (setq projectile-switch-project-action
+;;         '(lambda ()
+;;            (pyvenv-projectile-auto-workon)
+;;            (projectile-find-file)))
+;;   )
 
 (defun pyvenv-projectile-auto-workon ()
   "If a venv with the projectile name exists, activate it."
@@ -70,6 +77,36 @@
         )
       )
     )
+  )
+
+;; lsp-flycheck-ui overrides.
+;; lsp-flycheck-ui adds lsp-ui to the beginning of flycheck-checkers.
+;; This breaks the normal set of flycheck searching for python based checking.
+;; For C++/cquery, just leave it as is, since what comes from the language server
+;; is preferable to clang.
+;; In the case of python, pylint is generally perferred, with flake8
+;; if that's not available.
+;; Type checking generally throws a wrench into that, because you want to
+;; run that in addition to normal checking via pylint.
+;; The python-pycheckers package solves that problem.
+;; Now any available checkers will be used simultaneously.
+;; TODO It probably makes sense to prompt for auto install of pylint and mypy.
+;; if they're not available.
+(defun my-spacemacs/init-flycheck-pycheckers()
+  (use-package flycheck-pycheckers
+    :defer t
+    :init
+    (progn
+      (with-eval-after-load 'flycheck
+        (add-hook 'flycheck-mode-hook #'flycheck-pycheckers-setup))
+        ;; TODO Change this back to using python-pycheckers.
+        (add-hook 'python-mode-hook (lambda () (setq flycheck-checker 'python-pylint)))
+      )
+    )
+  )
+
+(defun my-spacemacs/init-lsp-python()
+  (use-package lsp-python)
   )
 
 ;; This is a patch for projectile that for some reason isn't fixed.
