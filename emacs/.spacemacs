@@ -102,7 +102,6 @@ values."
      (elfeed :variables
              rmh-elfeed-org-files
              (list "~/org/my-feeds.org"))
-     calendar
      mu4e
      gnus
      ranger
