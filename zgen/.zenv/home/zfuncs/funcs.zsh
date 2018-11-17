@@ -22,3 +22,8 @@ function pe {
         ps -eF | grep -i ${SEARCH} | grep -v grep
     fi
 }
+
+function mem
+{
+    ps -eo rss,pid,euser,args:100 --sort %mem | grep -v grep | grep -i $@ | awk '{ sum+=$1} END {print sum}'
+}
