@@ -34,3 +34,26 @@
     )
   )
  ;; )
+
+(defun python-extras-construct-entrypoint(virtualenv entry-point)
+  (concat virtualenv (concat "bin/" entry-point)))
+
+(defun python-extras-pdb-command(pyfile)
+  (format "python -m pdb %s" pyfile)
+  )
+
+(defun python-extras-list-entrypoints(virtualenv)
+  (directory-files (concat virtualenv (concat "bin/")) nil directory-files-no-dot-files-regexp)
+  )
+
+(defun python-extras-realgud-pdb-entry-point()
+  (interactive)
+  ;; Check to see if virtualenv enabled.
+  (let ((virtualenv (file-name-as-directory (getenv "VIRTUAL_ENV"))))
+    (when virtualenv
+      ;; Choose between entry points in virtualenv.
+      (let ((entrypoint (completing-read
+                         "Select an entrypoint: "
+                         (python-extras-list-entrypoints virtualenv))))
+        (realgud:pdb (python-extras-pdb-command (python-extras-construct-entrypoint virtualenv entrypoint))))))
+  )
