@@ -23,3 +23,12 @@ This will disable yapf saving from the python layer.
 This will also override the behaviour set up in
 python-auto-set-local-pyvenv-virtualenv entirely.
 "
+
+(defvar python-extras-auto-set-local-pyvenv-virtualenv-by-root nil)
+"If non-nil, automatically use setup.py or pyproject.toml to source a virtualenv.
+
+This will override python-extras-auto-set-local-pyvenv-virtualenv-by-name.
+"
+
+(defvar python-extras-previous-project-root "")
+"This is to store the previous project root for caching. Don't set."

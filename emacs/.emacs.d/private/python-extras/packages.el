@@ -11,6 +11,7 @@
 
 (defconst python-extras-packages
   '(
+    switch-buffer-functions
     blacken
     sphinx-doc
     ;; Pick up a forked version of lsp-python with support for
@@ -21,15 +22,15 @@
      :requires pyvenv
      :location (recipe
                 :fetcher github
-                :repo "wilypomegranate/lsp-python"))
-    )
-  )
+                :repo "wilypomegranate/lsp-python"))))
+
+(defun python-extras/init-switch-buffer-functions()
+  (use-package switch-buffer-functions
+    :defer t))
 
 (defun python-extras/init-blacken()
   (use-package blacken
-    :defer t
-    )
-  )
+    :defer t))
 
 ;; (defun python-extras/init-sphinx-doc()
 ;;   (use-package sphinx-doc
@@ -69,11 +70,8 @@
       (with-eval-after-load 'flycheck
         (add-hook 'flycheck-mode-hook #'flycheck-pycheckers-setup))
       ;; TODO Change this back to using python-pycheckers.
-      (add-hook 'python-mode-hook (lambda () (setq flycheck-checker 'python-pylint)))
-      )
-    )
-  )
+      (add-hook 'python-mode-hook (lambda () (setq flycheck-checker 'python-pylint))))))
 
 (defun python-extras/init-lsp-python()
-  (use-package lsp-python)
-  )
+  (use-package lsp-python
+    :defer t))
