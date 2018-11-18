@@ -73,5 +73,4 @@
       (add-hook 'python-mode-hook (lambda () (setq flycheck-checker 'python-pylint))))))
 
 (defun python-extras/init-lsp-python()
-  (use-package lsp-python
-    :defer t))
+  (use-package lsp-python))
