@@ -7,13 +7,16 @@
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
-;;; License: GPLv3
+;;; License: MIT
 
 (defconst python-extras-packages
   '(
     switch-buffer-functions
     blacken
     sphinx-doc
+    ;; This is needed for a post init that allows for
+    ;; realgud in python mode.
+    realgud
     ;; Pick up a forked version of lsp-python with support for
     ;; automatically sourcing virtualenv and installing
     ;; python-language-server.
@@ -48,6 +51,11 @@
 ;;       )
 ;;     )
 ;;   )
+
+;; realgud setup for python mode
+(defun python-extras/post-init-realgud()
+  (spacemacs/add-realgud-debugger 'python-mode "pdb"))
+
 
 ;; lsp-flycheck-ui overrides.
 ;; lsp-flycheck-ui adds lsp-ui to the beginning of flycheck-checkers.
