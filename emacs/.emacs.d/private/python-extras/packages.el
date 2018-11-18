@@ -54,7 +54,10 @@
 
 ;; realgud setup for python mode
 (defun python-extras/post-init-realgud()
-  (spacemacs/add-realgud-debugger 'python-mode "pdb"))
+  (progn
+    (spacemacs/add-realgud-debugger 'python-mode "pdb")
+    (spacemacs/set-leader-keys-for-major-mode 'python-mode
+      "ds" 'realgud-short-key-mode)))
 
 
 ;; lsp-flycheck-ui overrides.
