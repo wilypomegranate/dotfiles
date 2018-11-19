@@ -66,10 +66,12 @@
     (when virtualenv
       ;; Choose between entry points in virtualenv.
       (let ((entrypoint (completing-read
-                         "Select an entrypoint: "
+                         "Select an entry point: "
                          (python-extras-list-entrypoints virtualenv))))
-        (realgud:pdb (python-extras-pdb-command (python-extras-construct-entrypoint virtualenv entrypoint))))))
-  )
+
+        (realgud:pdb (python-extras-pdb-command
+                      (python-extras-construct-entrypoint
+                       virtualenv (read-string "Run entry point (like this): " entrypoint))))))))
 
 ;; Add a hook to switch pyenv whenever a buffer is changed.
 (add-hook 'switch-buffer-functions
