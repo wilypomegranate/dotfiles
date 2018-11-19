@@ -56,8 +56,10 @@
   )
 
 (defun python-extras-list-entrypoints(virtualenv)
-  (directory-files (concat virtualenv (concat "bin/")) nil directory-files-no-dot-files-regexp)
-  )
+  (butlast (split-string
+            (shell-command-to-string
+             (format "grep -lr load_entry_point %s/bin | xargs -n 1 basename"
+                     virtualenv)) "\n")))
 
 (defun python-extras-realgud-pdb-entry-point()
   (interactive)
