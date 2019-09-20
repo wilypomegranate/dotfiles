@@ -247,4 +247,4 @@ exec --no-startup-id "/bin/bash -c 'command ~/.config/i3/startup.sh &> /dev/null
 exec --no-startup-id "redshift -l 40.73:-73.94"
 
 # Background setup
-exec_always --no-startup-id "sleep 2; feh --bg-fill /usr/share/backgrounds/f29/default/wide/f29.png"
+exec_always --no-startup-id "sleep 2; feh --bg-fill /usr/share/backgrounds/f30/extras/i-see-stars.jpg"
