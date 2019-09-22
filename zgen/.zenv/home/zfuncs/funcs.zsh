@@ -30,3 +30,12 @@ function mem {
 function ptree {
     ps axjf
 }
+
+function fstab {
+    sed 's/#.*//' /etc/fstab | column --table --table-columns SOURCE,TARGET,TYPE,OPTIONS,PASS,FREQ --table-right PASS,FREQ
+}
+
+
+function mtab {
+    sed 's/#.*//' /etc/mtab | column --table --table-columns SOURCE,TARGET,TYPE,OPTIONS,PASS,FREQ --table-right PASS,FREQ
+}
