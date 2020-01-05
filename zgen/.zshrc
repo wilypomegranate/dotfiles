@@ -51,6 +51,9 @@ then
     # json pretty printing and validation
     zgen oh-my-zsh plugins/jsontools
 
+    # k8s
+    zgen oh-my-zsh plugins/kubectl
+
     # npm completions
     zgen oh-my-zsh plugins/npm
 

@@ -179,9 +179,9 @@ set $mode_env Env (d) dev, (b) browsing, (v) virt
 # Initialize power mode with mode p
 bindsym $mod+q mode "$mode_env"
 mode "$mode_env" {
-    bindsym d exec --no-startup-id tilix -e "tmux", exec --no-startup-id "google-chrome gmail.com", exec --no-startup-id "emacs", mode "default"
-    bindsym b exec --no-startup-id "google-chrome gmail.com", mode "default"
-    bindsym v exec --no-startup-id "virt-manager", mode "default"
+    bindsym d workspace 1, exec tilix -e "tmux", workspace 2, exec "firefox", workspace 3, exec "emacs", mode "default"
+    bindsym b workspace 2, exec --no-startup-id "firefox", mode "default"
+    bindsym v workspace 1, exec --no-startup-id "virt-manager", mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -196,19 +196,19 @@ mode "$mode_env" {
 assign [instance="roxterm"] 1
 
 # tilix is on workspace 1
-assign [instance="roxterm"] 1
+# assign [instance="tilix"] 1
 
-# google-chrome is on workspace 2
+# browsers are on workspace 2
 assign [instance="google-chrome"] 2
-
-# firefox is on workspace 2
-assign [instance="firefox"] 2
+# assign [class="Firefox"] 2
 
 # emacs is on workspace 3
 assign [instance="emacs"] 3
 
-# pidgin is on workspace 4
+# chat is on workspace 4
 assign [instance="pidgin"] 4
+assign [instance="riot"] 4
+assign [instance="signal"] 4
 
 ################################################
 
@@ -227,7 +227,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 20%- # decrease screen bright
 bar {
         # Put the bar at the top
         position top
-        status_command i3status
+        status_command i3status -c ~/.config/i3/i3status.conf
         colors{
           background #232323
           statusline #DCDCDC
@@ -238,7 +238,7 @@ exec --no-startup-id nm-applet
 # volumeicon doesn't work until we actually play something
 # See - https://www.reddit.com/r/i3wm/comments/42cp4a/running_volumeicon_at_i3_startup/
 # This takes 3 seconds or so
-exec --no-startup-id "aplay /usr/share/sounds/alsa/Front_Center.wav && volumeicon"
+exec --no-startup-id "aplay ~/Music/startup.wav && volumeicon"
 
 # Handle machine specific startup commands
 exec --no-startup-id "/bin/bash -c 'command ~/.config/i3/startup.sh &> /dev/null && ~/.config/i3/startup.sh'"
