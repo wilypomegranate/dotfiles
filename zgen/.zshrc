@@ -37,7 +37,7 @@ then
 
     # I prefer the git plugin from oh-my-zsh
 
-    zgen oh-my-zsh git
+    zgen oh-my-zsh plugins/git
 
     # Handle a missing command
     zgen oh-my-zsh plugins/command-not-found
