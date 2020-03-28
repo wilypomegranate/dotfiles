@@ -42,11 +42,11 @@
   )
 
 (defun my-spacemacs/init-nord-theme()
-  (use-package nord-theme)
+  (use-package nord-theme :defer t)
   )
 
 (defun my-spacemacs/init-doom-theme()
-  (use-package doom-theme)
+  (use-package doom-theme :defer t)
   )
 
 ;; This is a patch for projectile that for some reason isn't fixed.
