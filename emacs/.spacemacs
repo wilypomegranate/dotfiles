@@ -74,6 +74,7 @@ values."
      (c-c++ :variables
      c-c++-enable-clang-support nil
      c-c++-enable-clang-format-on-save t
+     c-c++-backend 'lsp-ccls
      c-c++-default-mode-for-headers 'c++-mode)
      ;; c-c++-enable-clang-support nil
      ;; rtags
@@ -83,7 +84,7 @@ values."
      ;; mineo-irony
      ;; rtags
      lsp
-     cquery
+     dap
      dart
      my-spacemacs
      home-spacemacs
