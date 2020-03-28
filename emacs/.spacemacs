@@ -94,7 +94,8 @@ values."
      docker
      command-log
      protobuf
-     rust
+     (rust :variables
+     rust-format-on-save t)
      shell-scripts
      ;; Read layer documentation for npm packages to add
      ;; github markdown export support
