@@ -8,6 +8,7 @@
 
 ;; TRAMP mode remote shell config
 (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
+(setq tramp-verbose 10)
 
 ;; Use eww by default
 (setq browse-url-browser-function 'eww-browse-url)
