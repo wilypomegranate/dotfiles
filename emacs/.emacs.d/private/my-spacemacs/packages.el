@@ -3,6 +3,7 @@
     virtualenvwrapper
     nord-theme
     doom-themes
+    dhall-mode
     )
   )
 
@@ -48,6 +49,12 @@
 
 (defun my-spacemacs/init-doom-theme()
   (use-package doom-theme :defer t)
+  )
+
+(defun my-spacemacs/init-dhall-mode()
+  (use-package dhall-mode
+    :ensure t
+    :mode "\\.dhall\\'")
   )
 
 ;; This is a patch for projectile that for some reason isn't fixed.
