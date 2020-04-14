@@ -1263,7 +1263,7 @@
         }
     ],
     "vim.easymotion": true,
-    "workbench.colorTheme": "soft era",
+    "workbench.colorTheme": "BirdsofParadise",
     "window.menuBarVisibility": "toggle",
     "workbench.activityBar.visible": false,
     "git.confirmSync": false,
@@ -1276,7 +1276,9 @@
     "editor.multiCursorModifier": "alt",
     "cSpell.enabled": false,
     "python.linting.pylintUseMinimalCheckers": true,
+    "rust-client.rustupPath": "~/.cargo/bin/rustup",
     "terminal.integrated.commandsToSkipShell": [
         "-workbench.action.quickOpen"
-    ]
+    ],
+    "workbench.statusBar.visible": true
 }
