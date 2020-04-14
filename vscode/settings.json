@@ -1265,7 +1265,7 @@
     "vim.easymotion": true,
     "workbench.colorTheme": "soft era",
     "window.menuBarVisibility": "toggle",
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "git.confirmSync": false,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
