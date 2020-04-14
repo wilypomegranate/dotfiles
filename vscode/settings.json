@@ -1276,4 +1276,7 @@
     "editor.multiCursorModifier": "alt",
     "cSpell.enabled": false,
     "python.linting.pylintUseMinimalCheckers": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen"
+    ]
 }
