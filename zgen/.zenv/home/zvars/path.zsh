@@ -1,3 +1,6 @@
+# Put in .cabal for haskell before other overrides
+PATH=$HOME/.cabal/bin:$PATH
+
 # Put in .cargo for rust before other overrides
 PATH=$HOME/.cargo/bin:$PATH
 
