@@ -68,7 +68,7 @@
                     "args": []
                 }
             ]
-        }
+        },
         {
             "before": [
                 "<leader>",
@@ -1265,7 +1265,7 @@
     "vim.easymotion": true,
     "workbench.colorTheme": "soft era",
     "window.menuBarVisibility": "toggle",
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "git.confirmSync": false,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
@@ -1276,4 +1276,7 @@
     "editor.multiCursorModifier": "alt",
     "cSpell.enabled": false,
     "python.linting.pylintUseMinimalCheckers": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen"
+    ]
 }
