@@ -97,6 +97,9 @@ values."
      protobuf
      (rust :variables
      rust-format-on-save t)
+     (haskell :variables
+              haskell-completion-backend 'ghci
+              haskell-enable-hindent t)
      shell-scripts
      ;; Read layer documentation for npm packages to add
      ;; github markdown export support
