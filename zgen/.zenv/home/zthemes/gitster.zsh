@@ -23,7 +23,7 @@ function get_pwd(){
 function get_host() {
     if env | grep SSH_CONNECTION > /dev/null
     then
-        echo "[$(hostname -s)] "
+        echo "[$(hostname | cut -d '.' -f 1)] "
     else
     fi
 }
