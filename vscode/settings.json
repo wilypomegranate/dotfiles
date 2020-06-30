@@ -6,7 +6,7 @@
     "telemetry.enableTelemetry": false,
     "editor.minimap.enabled": false,
     "python.venvPath": "~/venvs",
-    "editor.fontFamily": "'Fira Code Retina'",
+    "editor.fontFamily": "'Source Code Pro",
     "editor.fontLigatures": true,
     "editor.formatOnSave": true,
     "files.insertFinalNewline": true,
@@ -1263,7 +1263,7 @@
         }
     ],
     "vim.easymotion": true,
-    "workbench.colorTheme": "soft era",
+    "workbench.colorTheme": "BirdsofParadise",
     "window.menuBarVisibility": "toggle",
     "workbench.activityBar.visible": false,
     "git.confirmSync": false,
@@ -1272,11 +1272,20 @@
     },
     "materialTheme.fixIconsRunning": false,
     "workbench.iconTheme": "vscode-icons",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "editor.multiCursorModifier": "alt",
     "cSpell.enabled": false,
     "python.linting.pylintUseMinimalCheckers": true,
     "terminal.integrated.commandsToSkipShell": [
         "-workbench.action.quickOpen"
     ]
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "python.jediEnabled": false,
+    "vs-kubernetes": {
+        "vs-kubernetes.minikube-path": "/home/jon/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vs-kubernetes.draft-path": "/home/jon/.vs-kubernetes/tools/draft/linux-amd64/draft",
+        "vs-kubernetes.helm-path": "/home/jon/.vs-kubernetes/tools/helm/linux-amd64/helm"
+    },
 }

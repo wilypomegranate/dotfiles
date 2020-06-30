@@ -4,6 +4,7 @@
     nord-theme
     doom-themes
     dhall-mode
+    highlight-indent-guides
     )
   )
 
@@ -56,6 +57,12 @@
     :ensure t
     :mode "\\.dhall\\'")
   )
+
+
+(defun my-spacemacs/init-highlight-indent-guides()
+  (use-package highlight-indent-guides
+    :defer t)
+)
 
 ;; This is a patch for projectile that for some reason isn't fixed.
 ;; See https://github.com/bbatsov/projectile/pull/1234.
