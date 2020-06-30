@@ -5,6 +5,7 @@
     doom-themes
     dhall-mode
     highlight-indent-guides
+    meson-mode
     )
   )
 
