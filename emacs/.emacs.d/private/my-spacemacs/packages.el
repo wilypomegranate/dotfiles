@@ -59,9 +59,13 @@
     :mode "\\.dhall\\'")
   )
 
-
 (defun my-spacemacs/init-highlight-indent-guides()
   (use-package highlight-indent-guides
+    :defer t)
+)
+
+(defun my-spacemacs/init-meson-mode()
+  (use-package meson-mode
     :defer t)
 )
 

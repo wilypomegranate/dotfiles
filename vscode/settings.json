@@ -1263,7 +1263,8 @@
         }
     ],
     "vim.easymotion": true,
-    "workbench.colorTheme": "BirdsofParadise",
+    "vim.useSystemClipboard": true,
+    "workbench.colorTheme": "Solarized+",
     "window.menuBarVisibility": "toggle",
     "workbench.activityBar.visible": false,
     "git.confirmSync": false,
@@ -1276,6 +1277,9 @@
     "editor.multiCursorModifier": "alt",
     "cSpell.enabled": false,
     "python.linting.pylintUseMinimalCheckers": true,
+    "projectManager.git.baseFolders": [
+        "$home/projects"
+    ],
     "terminal.integrated.commandsToSkipShell": [
         "-workbench.action.quickOpen"
     ]
