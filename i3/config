@@ -183,7 +183,7 @@ set $mode_env Env (d) dev, (b) browsing, (v) virt
 # Initialize power mode with mode p
 bindsym $mod+q mode "$mode_env"
 mode "$mode_env" {
-    bindsym d workspace 2, exec "firefox", workspace 4, exec "signal", exec "riot", workspace 1, exec tilix -e "tmux", workspace 3, exec "emacs", mode "default"
+    bindsym d workspace 1, exec tilix -e "tmux", workspace 3, exec "emacs", workspace 2, exec "browser", exec "signal", exec "riot", mode "default"
     bindsym b workspace 2, exec --no-startup-id "firefox", mode "default"
     bindsym v workspace 1, exec --no-startup-id "virt-manager", mode "default"
 
