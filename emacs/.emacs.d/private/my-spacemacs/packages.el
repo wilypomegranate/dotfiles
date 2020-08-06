@@ -6,6 +6,7 @@
     dhall-mode
     highlight-indent-guides
     meson-mode
+    scad-mode
     )
   )
 
@@ -68,6 +69,11 @@
   (use-package meson-mode
     :defer t)
 )
+
+(defun my-spacemacs/init-scad-mode()
+  (use-package scad-mode
+    :defer t)
+  )
 
 ;; This is a patch for projectile that for some reason isn't fixed.
 ;; See https://github.com/bbatsov/projectile/pull/1234.
