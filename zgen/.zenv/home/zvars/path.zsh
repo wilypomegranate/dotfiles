@@ -1,3 +1,6 @@
+# Put in .nimble for nim before other overrides
+PATH=$HOME/.nimble/bin:$PATH
+
 # Put in .cabal for haskell before other overrides
 PATH=$HOME/.cabal/bin:$PATH
 
