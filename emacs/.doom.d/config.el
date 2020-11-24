@@ -69,3 +69,5 @@
 (map! :leader
       :desc "Eshell popup"
       "'" #'+eshell/toggle)
+
+(load! "~/.doom.d/local.el" nil t)
