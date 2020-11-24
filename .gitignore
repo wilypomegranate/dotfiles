@@ -4,3 +4,4 @@ emacs/.emacs.d/private/home-spacemacs
 i3/startup.sh
 emacs/.doom.d/modules
 emacs/.doom.d/local.el
+emacs/.doom.d/local-packages.el
