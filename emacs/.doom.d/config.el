@@ -74,6 +74,8 @@
       :desc "Goto definition"
       "gg" #'+lookup/definition
       "jl" #'avy-goto-line
+      :desc "Switch project"
+      "pl" #'projectile-switch-project
       :desc "Toggle/Untoggle Comment"
       "cl" #'comment-line
       :desc "Eshell popup"
