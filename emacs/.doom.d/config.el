@@ -96,8 +96,8 @@
         :desc "New workspace"             "n"   #'+workspace/new
         :desc "Load workspace from file"  "l"   #'+workspace/load
         :desc "Save workspace to file"    "s"   #'+workspace/save
-        :desc "Delete session"            "x"   #'+workspace/kill-session
-        :desc "Delete this workspace"     "d"   #'+workspace/delete
+        :desc "Delete session"            "x"   #'+workspace/delete
+        :desc "Delete this workspace"     "d"   #'+workspace/kill-session
         :desc "Rename workspace"          "r"   #'+workspace/rename
         :desc "Restore last session"      "R"   #'+workspace/restore-last-session
         :desc "Next workspace"            "]"   #'+workspace/switch-right
