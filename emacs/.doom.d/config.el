@@ -90,11 +90,11 @@
 (map! :leader
       (:when (featurep! :ui workspaces)
        (:prefix-map ("l" . "workspace")
-        :desc "Display tab bar"           "SPC" #'+workspace/display
+        :desc "Display tab bar"           "l" #'+workspace/display
         :desc "Switch workspace"          "."   #'+workspace/switch-to
         :desc "Switch to last workspace"  "TAB"   #'+workspace/other
         :desc "New workspace"             "n"   #'+workspace/new
-        :desc "Load workspace from file"  "l"   #'+workspace/load
+        :desc "Load workspace from file"  "SPC"   #'+workspace/load
         :desc "Save workspace to file"    "s"   #'+workspace/save
         :desc "Delete session"            "x"   #'+workspace/delete
         :desc "Delete this workspace"     "d"   #'+workspace/kill-session
