@@ -113,4 +113,9 @@
         :desc "Switch to 9th workspace"   "9"   #'+workspace/switch-to-8
         :desc "Switch to final workspace" "0"   #'+workspace/switch-to-final)))
 
+
+;; TRAMP mode remote shell config
+(setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
+(setq tramp-verbose 10)
+
 (load! "~/.doom.d/local.el" nil t)
