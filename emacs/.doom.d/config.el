@@ -113,4 +113,5 @@
         :desc "Switch to 9th workspace"   "9"   #'+workspace/switch-to-8
         :desc "Switch to final workspace" "0"   #'+workspace/switch-to-final)))
 
+(load! "~/.doom.d/eshell.el" nil t)
 (load! "~/.doom.d/local.el" nil t)
