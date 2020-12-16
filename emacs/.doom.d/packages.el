@@ -60,5 +60,9 @@
 (package! forge) ;; for github layer
 (package! evil-terminal-cursor-changer) ;; for spacemacs evil
 (package! eshell-prompt-extras) ;; for shell layer
+(package! birds-of-paradise-plus-theme) ;; birds of paradise plus theme
+(package! solarized-theme) ;; solarized theme
+(package! gruvbox-theme) ;; gruvbox theme
+(package! nord-theme) ;; nord theme
 
 (load! "~/.doom.d/local-packages.el" nil t)
