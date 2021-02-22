@@ -66,5 +66,6 @@
 (package! nord-theme) ;; nord theme
 (package! qml-mode) ;; qml mode for qt development
 (package! company-qml) ;; company support for qml for qt development
+(package! verilog-mode) ;; verilog mode for fpga development
 
 (load! "~/.doom.d/local-packages.el" nil t)
