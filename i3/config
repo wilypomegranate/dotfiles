@@ -163,10 +163,10 @@ bindsym $mod+p mode "$mode_power"
 mode "$mode_power" {
     bindsym l exec --no-startup-id i3lock, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id "i3lock && loginctl suspend", mode "default"
-    bindsym h exec --no-startup-id "i3lock && loginctl hibernate", mode "default"
-    bindsym r exec --no-startup-id loginctl reboot, mode "default"
-    bindsym p exec --no-startup-id loginctl poweroff, mode "default"
+    bindsym s exec --no-startup-id "i3lock && systemctl suspend", mode "default"
+    bindsym h exec --no-startup-id "i3lock && systemctl hibernate", mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
