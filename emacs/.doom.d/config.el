@@ -116,6 +116,8 @@
 ;; TRAMP mode remote shell config
 (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
 (setq tramp-verbose 10)
+(setq projectile-enable-caching nil)
+(setq projectile-indexing-method 'alien)
 
 ;; Custom eshell setup
 (load! "~/.doom.d/eshell.el" nil t)
