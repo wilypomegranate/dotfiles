@@ -119,6 +119,16 @@
 (setq projectile-enable-caching nil)
 (setq projectile-indexing-method 'alien)
 
+;; Link creation template
+(after! org-capture
+  (add-to-list 'org-capture-templates
+               '("l" "Link Capture" entry
+                 (file+headline "~/org/org-linkz/Linkz.org" "INBOX")
+                 "* %a %U"
+                 :immediate-finish t)))
+
+(setq org-protocol-default-template-key "l")
+
 ;; Custom eshell setup
 (load! "~/.doom.d/eshell.el" nil t)
 
