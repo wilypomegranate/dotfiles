@@ -99,6 +99,9 @@ then
     # Auto sources venvs if name is same as git repo
     zgen oh-my-zsh plugins/virtualenvwrapper
 
+    # fzf completion
+    zgen oh-my-zsh plugins/fzf
+
     # Reminders to learn aliases
     zgen load djui/alias-tips
 
@@ -142,11 +145,8 @@ then
     # Go back dirs
     zgen load Tarrasch/zsh-bd
 
-    # Directory lister
-    zgen load supercrabtree/k
-
     # Multi-word searching for easier ^r history search.
-    zgen load psprint/history-search-multi-word
+    # zgen load psprint/history-search-multi-word
 
     # Simple calculation functions via bc
     zgen load vladmrnv/statify
