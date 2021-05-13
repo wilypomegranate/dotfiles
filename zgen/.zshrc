@@ -99,8 +99,11 @@ then
     # Auto sources venvs if name is same as git repo
     zgen oh-my-zsh plugins/virtualenvwrapper
 
-    # fzf completion
+    # fzf ctrl r
     zgen oh-my-zsh plugins/fzf
+
+    # fzf tab completetion
+    zgen load Aloxaf/fzf-tab
 
     # Reminders to learn aliases
     zgen load djui/alias-tips
