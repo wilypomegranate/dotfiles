@@ -67,5 +67,6 @@
 (package! qml-mode) ;; qml mode for qt development
 (package! company-qml) ;; company support for qml for qt development
 (package! verilog-mode) ;; verilog mode for fpga development
+(package! virtualenvwrapper) ;; virtualenvwrapper for virtualenv changes in eshell
 
 (load! "~/.doom.d/local-packages.el" nil t)
