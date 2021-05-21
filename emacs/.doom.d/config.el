@@ -133,3 +133,6 @@
 (load! "~/.doom.d/eshell.el" nil t)
 
 (load! "~/.doom.d/local.el" nil t)
+
+;; Untracked local eshell
+(load! "~/.doom.d/local-eshell.el" nil t)
