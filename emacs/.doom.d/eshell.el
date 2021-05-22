@@ -54,7 +54,7 @@
   (eshell/alias "pu" "pushd")
 
   ;; sudo alias
-  (eshell/alias "_" "sudo")
+  (eshell/alias "_" "sudo $*")
 
   ;; process alias
   (eshell/alias "pa" "ps auwwxx | grep $1 | grep -vi grep")
