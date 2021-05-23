@@ -2,6 +2,9 @@
 
 (setq eshell-destroy-buffer-when-process-dies t)
 
+;; Set eshell up to be case-insentitive
+(setq eshell-up-ignore-case t)
+
 (add-hook! eshell-mode
   (add-to-list 'eshell-visual-commands "top")
   (add-to-list 'eshell-visual-options '("git" "--help"))
@@ -204,4 +207,8 @@
 
   ;; process alias
   (eshell/alias "pa" "ps auwwxx | grep $1 | grep -vi grep")
+
+  ;; eshell-up aliases
+  (eshell/alias "up" "eshell-up")
+  (eshell/alias "pk" "eshell-up-peek")
   )
