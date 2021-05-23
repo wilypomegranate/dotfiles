@@ -200,7 +200,10 @@
   (eshell/alias "3" "cd -3")
   (eshell/alias "4" "cd -4")
   (eshell/alias "po" "popd")
-  (eshell/alias "pu" "pushd")
+  (eshell/alias "pu" "pushd $*")
+
+  ;; Other eshell aliases
+  (eshell/alias "ce" "calc-eval $*")
 
   ;; sudo alias
   (eshell/alias "_" "sudo $*")
@@ -211,4 +214,10 @@
   ;; eshell-up aliases
   (eshell/alias "up" "eshell-up")
   (eshell/alias "pk" "eshell-up-peek")
-  )
+
+;; Rebind keys to be more useful in eshell.
+  (map!
+   :map eshell-mode-map
+        ;; TODO C-r keeps binding to evil mode.
+        ;; "C-r"   #'+eshell/search-history
+        "M-r"   #'+eshell/search-history))
