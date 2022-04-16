@@ -144,7 +144,7 @@
        lua               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
        (nim +lsp)               ; python + lisp at the speed of c
-       ;;nix               ; I hereby declare "nix geht mehr!"
+       nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org
         +journal
