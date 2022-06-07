@@ -26,6 +26,11 @@
     "projectManager.git.baseFolders": [
         "$home/projects"
     ],
+    "vs-kubernetes": {
+        "vs-kubernetes.minikube-path": "~/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vs-kubernetes.draft-path": "~/.vs-kubernetes/tools/draft/linux-amd64/draft",
+        "vs-kubernetes.helm-path": "~/.vs-kubernetes/tools/helm/linux-amd64/helm"
+    },
     "vim.easymotion": true,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
