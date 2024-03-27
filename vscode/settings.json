@@ -1,8 +1,9 @@
 {
     "telemetry.telemetryLevel": "off",
+    "redhat.telemetry.enabled": false,
     "editor.minimap.enabled": false,
     "python.venvPath": "~/venvs",
-    "editor.fontFamily": "'Source Code Pro",
+    "editor.fontFamily": "Fira Code Retina",
     "editor.fontLigatures": true,
     "editor.formatOnSave": true,
     "files.insertFinalNewline": true,
@@ -18,6 +19,7 @@
         "suppressShowKeyBindingsNotice": true
     },
     "materialTheme.fixIconsRunning": false,
+    "workbench.iconTheme": "vscode-icons",
     "editor.multiCursorModifier": "alt",
     "cSpell.enabled": false,
     "python.linting.pylintUseMinimalCheckers": true,
@@ -35,6 +37,10 @@
         "vs-kubernetes.minikube-path": "${userHome}/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
         "vs-kubernetes.draft-path": "${userHome}/.vs-kubernetes/tools/draft/linux-amd64/draft",
         "vs-kubernetes.helm-path": "${userHome}/.vs-kubernetes/tools/helm/linux-amd64/helm"
+    "vs-kubernetes": {
+        "vs-kubernetes.minikube-path": "~/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vs-kubernetes.draft-path": "~/.vs-kubernetes/tools/draft/linux-amd64/draft",
+        "vs-kubernetes.helm-path": "~/.vs-kubernetes/tools/helm/linux-amd64/helm"
     },
     "vim.easymotion": true,
     "vim.useSystemClipboard": true,
@@ -83,4 +89,5 @@
         }
     ],
     "workbench.colorTheme": "Better Solarized Dark"
+    ]
 }
