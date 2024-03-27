@@ -1,6 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
+# Commands to run in interactive sessions can go here
 
 abbr 1 'cd -'
 abbr 2 'cd -2'
@@ -124,7 +123,7 @@ abbr grbd 'git rebase develop'
 abbr grbi 'git rebase -i'
 abbr grbm 'git rebase master'
 abbr grbs 'git rebase --skip'
-abbr grep 'grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+# abbr grep 'grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 abbr grev 'git revert'
 abbr grh 'git reset'
 abbr grhh 'git reset --hard'
@@ -368,3 +367,9 @@ abbr zup 'sudo zypper up'
 abbr zvcmp 'zypper vcmp'
 abbr zve 'sudo zypper ve'
 abbr zwp 'zypper wp'
+
+# This is for emacs escape .
+set fish_escape_delay_ms 2000
+bind \e. history-token-search-backward
+
+end
