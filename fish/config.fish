@@ -104,7 +104,6 @@ abbr gmtvim 'git mergetool --no-prompt --tool=vimdiff'
 abbr gmum 'git merge upstream/master'
 abbr goodreads 'web_search goodreads'
 abbr google 'web_search google'
-abbr goto project_goto
 abbr gp 'git push'
 abbr gpd 'git push --dry-run'
 abbr gpf 'git push --force-with-lease'
