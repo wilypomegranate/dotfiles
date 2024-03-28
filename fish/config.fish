@@ -381,4 +381,6 @@ abbr zwp 'zypper wp'
 set fish_escape_delay_ms 2000
 bind \e. history-token-search-backward
 
+set fish_greeting
+
 end
