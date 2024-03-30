@@ -1,6 +1,8 @@
 function get_pwd -S
-    if git rev-parse --git-dir --show-toplevel &> /dev/null
+    if git rev-parse --git-dir --show-toplevel &>/dev/null
         set pwd $(git rev-parse --git-dir --show-toplevel | tail -n 1 | xargs -n 1 basename)
+        set pwd "$pwd/$(git rev-parse --show-prefix)"
+        set pwd $(path normalize $pwd)
         set git_current_branch $(git rev-parse --abbrev-ref HEAD)
         if test -n "$(git status --porcelain)"
             set git_prompt (set_color cyan) $git_current_branch (set_color yellow)"✗"(set_color normal)" "
@@ -15,5 +17,5 @@ end
 
 function fish_prompt
     get_pwd
-    echo $pwd $git_prompt
+    echo "$pwd""$git_prompt"
 end
