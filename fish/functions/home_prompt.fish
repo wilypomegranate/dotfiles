@@ -3,7 +3,7 @@ function get_pwd -S
         set pwd $(git rev-parse --git-dir --show-toplevel | tail -n 1 | xargs -n 1 basename)
         set pwd "$pwd/$(git rev-parse --show-prefix)"
         set pwd $(path normalize $pwd)
-        set git_current_branch $(git rev-parse --abbrev-ref HEAD)
+        set git_current_branch $(git rev-parse --abbrev-ref HEAD 2> /dev/null)
         if test -n "$(git status --porcelain)"
             set git_prompt (set_color cyan) $git_current_branch (set_color yellow)"✗"(set_color normal)" "
         else
